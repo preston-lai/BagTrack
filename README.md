@@ -1,54 +1,71 @@
-# React + TypeScript + Vite
+# BagTrack – Micro SaaS for Crypto Swing Traders
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BagTrack is a minimal, user-friendly web app for swing traders in crypto (altcoins, meme coins, etc) who want to easily record and track their trades. The app lets you log trade entries (price, market cap, date), view trade history, and organize your trades for better performance review.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Structure
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+/src/app
+  /components
+    Navbar.tsx
+    Hero.tsx
+    Features.tsx
+  page.tsx
+  layout.tsx
+  globals.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Features
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+- **Log Trade Entries:**
+  - Record entry price, market cap, and date for any altcoin or meme coin trade.
+- **View Trade History:**
+  - See a complete history of your trades and review past performance.
+- **Tag & Organize Coins:**
+  - Add tags to your trades for better organization and faster searching.
+- **Minimal, Modern UI:**
+  - Clean SaaS-style homepage with a hero section, features, and easy navigation.
+
+---
+
+## Tech Stack
+
+- [Next.js 14+](https://nextjs.org/) (App Router)
+- [React 19+](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [shadcn/ui](https://ui.shadcn.com/) for modern, accessible UI components
+
+---
+
+## Getting Started
+
+1. Clone the repo and install dependencies:
+   ```bash
+   git clone https://github.com/yourusername/bagtrack.git
+   cd bagtrack
+   npm install
+   # or
+   yarn install
+   ```
+2. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+3. Open [http://localhost:3000](http://localhost:3000) to view the app.
+
+---
+
+## Customization
+- Update the hero, features, and navigation in `/src/app/components/` as needed.
+- Add new features or connect to a backend for persistent trade storage.
+
+---
+
+## License
+MIT
