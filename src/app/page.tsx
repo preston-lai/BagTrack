@@ -5,7 +5,7 @@ import Features from "./components/Features";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
-      <Navbar />
+      <Navbar showFeaturesLink={false} />
       <main className="flex-1">
         <Hero />
         <Features />

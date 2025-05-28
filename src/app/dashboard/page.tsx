@@ -6,7 +6,7 @@ const inProgressTrades = [
   {
     token: "PEPE",
     usdc: 500,
-    count: "100M",
+    count: 100000000,
     price: 0.000001,
     marketCap: "$10M",
     date: "2024-06-01"
@@ -14,7 +14,7 @@ const inProgressTrades = [
   {
     token: "SHIBA",
     usdc: 300,
-    count: "1B",
+    count: 1000000000,
     price: 0.000007,
     marketCap: "$50M",
     date: "2024-06-02"
@@ -25,7 +25,7 @@ const exitedTrades = [
   {
     token: "PEPE",
     usdc: 500,
-    count: "100M",
+    count: 100000000,
     price: 0.000001,
     marketCap: "$10M",
     date: "2024-06-01",
@@ -36,7 +36,7 @@ const exitedTrades = [
   {
     token: "SHIBA",
     usdc: 300,
-    count: "1B",
+    count: 1000000000,
     price: 0.000007,
     marketCap: "$50M",
     date: "2024-06-02",
@@ -49,11 +49,14 @@ const exitedTrades = [
 export default function Dashboard() {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
-      <Navbar />
-      <StatsBar totalInvested={800} totalPL={300} totalPLPercent={37.5} />
+      <Navbar showFeaturesLink={false} />
+      <StatsBar totalInvested={800} totalPL={300} totalPLPercent={37.5} portfolioValue={1100} />
       <main className="flex-1 flex flex-col md:flex-row gap-8 px-8 py-8 max-w-6xl mx-auto w-full">
         <section className="flex-1">
-          <h2 className="text-xl font-bold mb-4">In-Progress Trades</h2>
+          <div className="flex justify-between items-center mb-4">
+            <h2 className="text-xl font-bold">In-Progress Trades</h2>
+            <button className="px-4 py-2 bg-white text-black rounded hover:bg-gray-100 transition">Add Trade</button>
+          </div>
           <div className="flex flex-col gap-4">
             {inProgressTrades.map((trade, i) => (
               <TradeCard key={i} trade={trade} type="in-progress" />
