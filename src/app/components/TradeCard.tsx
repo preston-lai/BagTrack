@@ -14,6 +14,7 @@ type Trade = {
   contractAddress: string;
   dexscreenerLink: string;
   exitPrice?: number;
+  exitMarketCap?: string;
   exitDate?: string;
   pl?: string;
 };
@@ -88,12 +89,20 @@ export default function TradeCard({ trade, type, onExitTrade, onEditTrade }: Tra
         </div>
 
         {/* Expanded Details (Conditional) */}
-        {isExpanded && type === 'in-progress' && (
+        {isExpanded && (
           <div className="mt-4 pt-4 border-t border-border flex flex-col gap-2">
             <div className="text-sm">Amount Purchased: <span className="font-semibold">${trade.usdc}</span></div>
             <div className="text-sm">Price Entered At: <span className="font-semibold">${trade.price}</span></div>
             <div className="text-sm">Market Cap at Entry: <span className="font-semibold">{trade.marketCap}</span></div>
             <div className="text-sm">Date of Trade: <span className="font-semibold">{trade.date}</span></div>
+            {type === 'exited' && (
+              <>
+                <div className="text-lg font-semibold mt-2 mb-1 text-red-600">Exit Information</div>
+                <div className="text-sm">Exit Price: <span className="font-semibold">${trade.exitPrice}</span></div>
+                <div className="text-sm">Market Cap at Exit: <span className="font-semibold">{trade.exitMarketCap}</span></div>
+                <div className="text-sm">Exit Date: <span className="font-semibold">{trade.exitDate}</span></div>
+              </>
+            )}
             <div className="text-sm">Contract Address: <span className="font-mono text-xs">{truncateAddress(trade.contractAddress)}</span></div>
             <div className="text-sm">
               <a 

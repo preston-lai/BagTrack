@@ -14,7 +14,9 @@ export default function Navbar({ showFeaturesLink = true }: NavbarProps) {
         {showFeaturesLink && (
           <a href="#features" className="hover:text-primary transition">Features</a>
         )}
-        <a href="#login" className="hover:text-primary transition">Login</a>
+        <Link href="/login" className="text-white font-bold hover:text-white/80 transition">
+          Login
+        </Link>
       </div>
     </nav>
   )
