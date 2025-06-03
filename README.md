@@ -52,11 +52,11 @@ BagTrack is a minimal, user-friendly web app for swing traders in crypto (altcoi
    yarn install
    ```
 2. Run the development server:
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+```bash
+npm run dev
+# or
+yarn dev
+```
 3. Open [http://localhost:3000](http://localhost:3000) to view the app.
 
 ---
